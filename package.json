@@ -1,0 +1,21 @@
+{
+  "name": "cordova-camera-preview",
+  "version": "0.2.1",
+  "description": "Custom version of cordova-plugin-camera-preview that add a rectangle to aim text for OCR scan.",
+  "cordova": {
+    "id": "cordova-camera-preview",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "repository": {
+    "type": "git",
+    "directory": "http://gitlab.inflexsys.com/third-party/cordova/cordova-plugins/cordova-camera-preview.git"
+  },
+  "author": "Weston Ganger",
+  "license": "Apache 2.0 License"
+}

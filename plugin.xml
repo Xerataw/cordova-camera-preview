@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-camera-preview" version="0.2.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <name>cordova-camera-preview</name>
+    <description>Custom version of cordova-plugin-camera-preview that add a rectangle to aim text for OCR scan.</description>
+    <author>Weston Ganger</author>
+    <license>Apache 2.0 License</license>
+    <repo>http://gitlab.inflexsys.com/third-party/cordova/cordova-plugins/cordova-camera-preview.git</repo>
+
+    <js-module name="ICameraPreview" src="www/ICameraPreview.js">
+        <clobbers target="cordova.plugins.ICameraPreview" />
+    </js-module>
+
+    <platform name="android">
+        <source-file src="src/android/ICameraPreview.java" target-dir="src/com/inflexsyscamerapreview" />
+        <source-file src="src/android/CameraActivity.java" target-dir="src/com/inflexsyscamerapreview" />
+        <source-file src="src/android/CustomSurfaceView.java" target-dir="src/com/inflexsyscamerapreview" />
+        <source-file src="src/android/Preview.java" target-dir="src/com/inflexsyscamerapreview" />
+        <source-file src="src/android/TapGestureDetector.java" target-dir="src/com/inflexsyscamerapreview" />
+        <source-file src="src/android/CustomRectangle.java" target-dir="src/com/inflexsyscamerapreview" />
+        <source-file src="src/android/camera_activity.xml" target-dir="res/layout" />
+        <source-file src="src/android/camera_theme.xml" target-dir="res/values" />
+        <source-file src="src/android/camera_ids.xml" target-dir="res/values" />
+
+        <framework src="androidx.exifinterface:exifinterface:1.2.0" />
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ICameraPreview">
+                <param name="android-package" value="com.inflexsyscamerapreview.ICameraPreview" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-feature android:name="android.hardware.camera" android:required="false" />
+            <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.RECORD_AUDIO" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="com.inflexsyscamerapreview.CameraActivity" android:screenOrientation="portrait" android:theme="@style/CameraPreviewTheme" />
+        </config-file>
+    </platform>
+</plugin>
