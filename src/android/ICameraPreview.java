@@ -231,6 +231,7 @@ public class ICameraPreview extends CordovaPlugin implements CameraActivity.Came
         FragmentManager fragmentManager = cordova.getActivity().getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(containerView.getId(), fragment);
+        fragmentTransaction.hide();
         fragmentTransaction.commit();
       }
     });
