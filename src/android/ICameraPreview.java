@@ -21,6 +21,7 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+
 public class ICameraPreview extends CordovaPlugin implements CameraActivity.CameraPreviewListener {
 
   private static final String TAG = "ICameraPreview";

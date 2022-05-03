@@ -1,6 +1,6 @@
 {
   "name": "cordova-camera-preview",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Custom version of cordova-plugin-camera-preview that add a rectangle to aim text for OCR scan.",
   "cordova": {
     "id": "cordova-camera-preview",
@@ -9,8 +9,15 @@
     ]
   },
   "keywords": [
+    "cordova",
+    "phonegap",
     "ecosystem:cordova",
-    "cordova-android"
+    "cordova-android",
+    "ionic",
+    "camera",
+    "cam",
+    "camera-preview",
+    "preview"
   ],
   "repository": {
     "type": "git",
